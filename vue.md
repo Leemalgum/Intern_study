@@ -99,4 +99,45 @@ export { registerUser };
 
 ## vue state
 
-## vue interceptors
+## axios interceptors
+-  로그인 시 Request Header에 토큰값을 가져와야 하는데, api가 실행되기 전에 이미 axios instance가 생성되어 로그인을 하여도 토큰 값을 가져오지 않는다.
+-  이를 해결하기 위해 store에 토큰값을 저장하고 axios interceptors를 사용해서 토큰값을 가져온다.
+~~~javascript
+// src/api/index.js
+// 액시오스 초기화 함수
+function createInstance() {
+  const instance = axios.create({
+    baseURL: process.env.VUE_APP_API_URL,
+  });
+  return setInterceptors(instance);
+}
+
+// src/api/common/interceptors.js
+export function setInterceptors(instance) {
+    // 요청 인터셉터
+  instance.interceptors.request.use(
+    function(config) {
+      // 요청 성공 직전 호출
+      // console.log(config);
+      config.headers.Authorization = store.state.token;
+      return config;
+    },
+    function(error) {
+      // 요청 에러 직전 호출
+      return Promise.reject(error);
+    },
+  );
+  
+  // 응답 인터셉터
+  instance.interceptors.response.use(
+    function(response) {
+      // http status가 200인 경우, 응답 성공 직전 호출
+      return response;
+    },
+    function(error) {
+      // http status가 200이 아닌 경우, 응답 에러 직전 호출
+      return Promise.reject(error);
+    },
+  );
+  return instance;
+~~~
