@@ -18,7 +18,7 @@
 - [9월9일](#9월9일)
   * [vuejs 파일 구조](#vuejs-파일-구조)
   * [vue state](#vue-state)
-  * [vue interceptors](#vue-interceptors)
+  * [axios interceptors](#axios-interceptors)
 
 </details>
 
