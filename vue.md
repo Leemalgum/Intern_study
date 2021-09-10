@@ -113,6 +113,8 @@ function createInstance() {
 }
 
 // src/api/common/interceptors.js
+import store from '@/store/index';
+
 export function setInterceptors(instance) {
     // 요청 인터셉터
   instance.interceptors.request.use(
