@@ -116,7 +116,7 @@ function createInstance() {
 import store from '@/store/index';
 
 export function setInterceptors(instance) {
-    // 요청 인터셉터
+  // 요청 인터셉터
   instance.interceptors.request.use(
     function(config) {
       // 요청 성공 직전 호출
