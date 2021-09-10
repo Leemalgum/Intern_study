@@ -101,7 +101,7 @@ export { registerUser };
 
 ## axios interceptors
 -  로그인 시 Request Header에 토큰값을 가져와야 하는데, api가 실행되기 전에 이미 axios instance가 생성되어 로그인을 하여도 토큰 값을 가져오지 않는다.
--  이를 해결하기 위해 store에 토큰값을 저장하고 axios interceptors를 사용해서 토큰값을 가져온다.
+-  이를 해결하기 위해 store에 토큰값을 저장하고 axios interceptors를 사용해서 토큰값을 axios instance에 넣어준다.
 ~~~javascript
 // src/api/index.js
 // 액시오스 초기화 함수
