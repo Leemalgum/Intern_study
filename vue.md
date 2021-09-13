@@ -153,7 +153,17 @@ export function setInterceptors(instance) {
 ## @refresh
 
 ## dynamic matching
+- 유저의 마이페이지 처럼 비슷한 패턴의 url이 동일한 컴포넌트에 매칭되는 경우 동적 라우트 매칭을 사용한다.
+- 동적 세그먼크는 콜론(:)부터 작성한다.
+~~~javascript
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+~~~
 
 ## filters
 
 ## navigation guards
+
+# 9월13일
+## jest
