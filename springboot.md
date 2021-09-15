@@ -32,3 +32,20 @@
 - 위의 두 가지의 이유로 유지보수의 효율성이 향상한다.
 - 무결성 보장 : 보통의 캡슐화 코딩이란 변수는 private, 메소드는 public으로 선언하고, 이는 객체의 무결성을 보장한다.
 
+## 9월15일
+### Controller
+- 사용자의 요청을 어떻게 처리할지 결정하는 파트이다.
+- @Controller, @RestController 어노테이션을 사용한다.
+- @RequestMapping(value="", method=) : Controller에 들어온 요청을 처리하는 기준점이다. 서버의 URL+value로 매핑되며,
+최상단 API 경로를 설정한다.
+
+### Service
+- 사용자의 요청에 대해 어떤 처리를 할지 결정하는 파트이다. Controller가 받은 요청에 대해 알맞은 정보를 가공해서 다시
+Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서 수행되진 않는다.
+- @Service 어노테이션을 사용한다.
+
+### DAO(Data Access Object)
+- DB의 data에 접근하기 위한 객체이다. DB에 접근하는 코드는 SQL이기 때문에 자바에서 SQL을 사용하려면 Connection을 생성하고 직접 쿼리문을 작성하여 Connection을 닫는 과정이 필요하다.
+
+### DTO(Data Trasnfer Ojbect)
+- 계층 간의 데이터 교환을 위한 Java Bean을 말하며 VO(Value Object)와 유사하다. 클라이언트가 요청할 양식와 요청을 처리하는 과정에서 기준이 되는 틀을 정의하는 것이다.
