@@ -7,6 +7,9 @@
   * [@getter/setter](#@getter/setter)
   * [Bean Validation 2.0이 제공하는 어노테이션](#Bean-Validation-2.0이-제공하는-어노테이션])
   * [vaild spring boot](#vaild-spring-boot)
+  * [Swagger 어노테이션](#Swagger-어노테이션)
+  * [@RestControllerAdvice](#@RestControllerAdvice)
+  * [builder.append](#builder.append)
 - [9월14일](#9월14일)
   * [캡슐화](#캡슐화)
   * [캡슐화의 효과](#캡슐화의-효과)
@@ -17,7 +20,8 @@
   * [DTO(Data Trasnfer Ojbect)](#DTO(Data-Trasnfer-Ojbect))
 
 </details>
-## 9월13일
+
+## 9월13일  
 ### @RequiredArgsConstructor
 - final, @NotNull 이 붙은 변수들을 가진 생성자를 자동으로 생성해주는 lombok 어노테이션이다. 
 또한 변수 선언 시 @Autowired 어노테이션을 사용하지 않아도 된다. 변수 정의에 final 이나 @NotNull이 없을데 사용할 경우
@@ -35,10 +39,33 @@
 ### vaild spring boot
 - springboot가 @Valid 주석이 달린 인수를 찾으면 자동으로 기본 JSR 380구현인 Hibernate Validator를 부트스트랩하고 인수를 검증한다. 대상 인수가
 유효성 검사를 통과하지 못하면 MethodArgumentNotValidException 예외를 throw한다.
-- ApiParam
-- restcontrolleradvice
-- builder.append
-- @Repository = ioc 컨테이너에 올리는 법
+
+### Swagger 어노테이션
+- @Api : 클래스를 Swagger 리소스 대상으로 표시
+- @ApiOperation : 요청 URL에 매핑된 API에 대한 설명
+- @ApiParam : 요청 파라미터에 대한 설명 및 필수여부, 예제값 설정
+- @ApiResponse : 응답에 대한 설명
+
+### @RestControllerAdvice
+- @ControllerAdvice : @ExceptionHandler, @ModelAttribute, @InitBinder가 적용된 메서드들을 AOP를 적용해 Controller 단에 적용하기 위해 고안된 어노테이션이다. 클래스에 선언하면 되고, 모든 @Controller에 대한 전역적으로 발생할 수 있는 예외를 잡아서 처리할 수 있다.
+- @RestControllerAdvice : @ResponseBody + @ControllerAdvice를 합친 어노테이션이다. @ControllerAdvice와 동일한 역할을 수행하고, 추가적으로 @ResponseBody를 통해 객체를 리턴할 수 있다.
+- 단순 예외 처리만 한다면 @ControllerAdvicef를 사용하고, 응답 시 객체를 리턴해야 한다면 @RestControllerAdvice를 사용하면 된다.
+
+### builder.append
+- String 클래스 오브젝트의 문자열은 + 연산자를 사용해 문자열을 결합한다. String 클래스는 고정 길이로 되어있기 때문에 한 번 작성한 문자열 뒤에 문자를 추가하게 되면 새로운 문자열을 작성한다. 반면 StringBuilder 클래스는 가변길이의 문자열을 사용하기 때문에 문자를 추가해도 새로운 문자열을 작성하지 않고 문자열에 추가만 한다.
+- string + string : + 연산자를 사용해 문자열을 결합하면 매번 새로운 String 객체가 생성되고 이전의 문자열 객체는 가비지 값이 된다. 즉 메모리를 낭비하게 된다.
+- StringBuilder.Append(string) : StringBuilder는 문자열 생성을 도와주는 클래스로 Append 함수를 사용해 문자열을 이어붙인다. 위와 다르게 결합할 때 마다 새로운 String 객체를 생성하지 않아 메모리 낭비를 방지할 수 있다.
+
+### @Repository 
+- @Repository 어노테이션을 사용한 클래스는 IoC 컨테이너에 빈(Bean) 객체로 생성해준다.
+    - IoC(Inversion of Control) : 제어권의 역전이란 객체의 생성, 생명 주기의 관리까지 모든 객체에 대한 제어권이 바뀌었다는 것을 의미한다.
+    - IoC 컨테이너 : 
+        1. 객체의 생성을 책임지고 의존성을 관리한다. 
+        2. POJO의 생성/초기화/서비스/소멸에 대한 권한을 가진다.
+        3. 개발자들이 직접 POJO를 생성할 수 있지만 컨테이너에게 맡긴다.
+    - IoC의 분류 : 
+        - DL(Dependency Lookup) :  저장소에 저장되어 있는 Bean에 접근하기 위해 컨테이너가 제공하는 API를 이용하여 Bean을 Lookup 하는 것이다.
+        - DI(Dependency Injection) : 각 클래스 간의 의존 관계를 Bean Definition 정보를 바탕으로 컨테이너가 자동을 연결해주는 것이다.
 
 ## 9월14일
 ### 캡슐화
