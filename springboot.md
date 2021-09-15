@@ -54,5 +54,17 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
   - Java Bean : JavaBean API Specification에 따른 표준이다. 즉 아래 3가지 규칙을 지키는 클래스이다.
       1. 모든 필드는 private이며, getter/setter메서드를 통해서만 접근이 가능하다.
       2. Argument가 없는 생성자가 존재한다.
+      3. java.io.Serializable 인터페이스를 구현한다.  
+      ~~~java
+      @ToString
+@Getter
+@Setter
+@NoArgsConstructor
+public class SystemMenuTemp {
+
+    private String MenuCode;
+    private byte MenuLevel;
+}
+      ~~~
 - Springboot는 Presentation Layer(Controller)<->Business Layer(Service)<->Persistence Layer(JDBC, ORM)<->Database(MySQL, MariaDB) 계층 간의 데이터 교환이 이루어진다.
 
