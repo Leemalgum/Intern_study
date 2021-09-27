@@ -113,3 +113,55 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
       ~~~
 - Springboot는 Presentation Layer(Controller)<->Business Layer(Service)<->Persistence Layer(JDBC, ORM)<->Database(MySQL, MariaDB) 계층 간의 데이터 교환이 이루어진다.
 
+## 9월16일
+코드에서 객체를 만들고 그것을 서버에 올리는 것이 인스턴스화
+
+@Resource는 마이바티스에서 제공하는 어노테이션으로 name 속성 사용시 소문자로 시작해야 한다.
+
+-spring framework 입문
+spring petclinic :  스프링에서 제공하는 예제 코드를 가지고 설명
+제이미터 = 테스트할 때 api호출을 얼만큼 부하를 걸 것인지, 테스터 솔루션
+
+ioc 제어권의 역전
+-주로 의존성에 대한 제어권이 역전 되었음을 의미
+-원래는 의존성에 대한 제어권은 자기 자신이 가짐
+-ioc 하지 않았다면
+private OwnerRepository repository = new OwnerRepository(); -> 이렇게 작성함
+-ioc 하였다면
+private OwnerRepository repo; -> new 하지 않음
+
+jpa는 entity사용
+
+h2db inmemory디비?
+
+controller, repository 등 어노테이션이 붙은 클래스는 bean
+= ioc컨테이너에서 객체들을 만들고 의존성을 관리해준다.
+
+-bean = 스프링 ioc 컨테이너가 관리하는 객체
+
+어떻게 등록?
+-component scanning
+@component 어노테이션(@repository,@service,@controller)이 붙어있는 클래스들을 찾아서 bean으로 등록해줌 
+
+-직접 xml이나 자바 설정 파일에 등록
+@bean 이라고 직접 작성해주면 된다.
+@bean 어노테이션을 사용하려면 @config~~..? 어노테이션이 붙은 클래스에서만 사용 가능하다.
+
+@autowired를 사용해 bean을 꺼내서 사용할 수 있다. 
+
+의존성 주입 DI
+-@autowired/@inject
+생성자, 필드, setter에 붙여서 사용한다.
+
+AOP 흩어진 코드를 한 곳으로 모은다.
+@LogExecutionTime = 어디에 적용할지 표시 해두는 용도
+PSA 잘 만든 인터페이스
+@Transactional
+@Cacheable...
+
+## 9월24일
+- html-id/class 차이  
+
+## 9월25일
+- 리터럴로 문자열을 생성한 경우 "문자열"이 같으면 하나의 String인스턴스를 참조한다.
+- 생성자로 문자열을 생성한 경우 서로 다른 인스턴스를 가짐
