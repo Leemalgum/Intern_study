@@ -169,3 +169,9 @@ PSA 잘 만든 인터페이스
 ## 9월28일
 - extend jparepository
 - @RequiredArgsConstructor // bean으로 등록되어있다면 자동으로 생성자 만들어줌
+
+## 9월29일
+- jpa를 상속받으면 crud를 사용할 수 잇음
+리팩
+- 암호화 솔트 찾아보기~
+
