@@ -175,3 +175,12 @@ PSA 잘 만든 인터페이스
 리팩
 - 암호화 솔트 찾아보기~
 
+## 9월30일
+UsernamePasswordAuthenticationToken
+로그아웃 하지 않는 한 사용자에 대한 세션을 계속 가지고 잇다
+
+maven에서 npm도 함께 빌드 시키려면 pom.xml에 플러그인을 추가해줘야 한다.
+                   
+./mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행..? 찾아보기 -> maven의 명령어
+
+
