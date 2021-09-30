@@ -182,5 +182,8 @@ PSA 잘 만든 인터페이스
 - mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행..? 찾아보기 -> maven의 명령어
 - spring web 와 spring web service 의 차이점!!
 - selectkey => mybatics에서 제공하는 태그
-
-
+- 타임리프 프레그먼트 사용  = 뷰에 대한 중복 코드 제거, th:if 로 if문을 사용할 수 있다.
+- package.json에 디펜던시에 패키지 추가하고 npm install하면 설치해줌~
+- font-awesome = 이미지가 아니라 폰트이기 때문에 가벼움
+- js는 태그 닫을때 </>로~
+- html head에 node모듈 불러올때 순서 유의하기
