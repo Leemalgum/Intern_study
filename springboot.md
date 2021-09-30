@@ -172,15 +172,15 @@ PSA 잘 만든 인터페이스
 
 ## 9월29일
 - jpa를 상속받으면 crud를 사용할 수 잇음
-리팩
 - 암호화 솔트 찾아보기~
+- spring security가 기본 계정 user를 만들어준다+csrf 기능이 자동으로 켜져있다=csrf token = html에 hidden 태그에 설정되어 있다
+
 
 ## 9월30일
-UsernamePasswordAuthenticationToken
-로그아웃 하지 않는 한 사용자에 대한 세션을 계속 가지고 잇다
-
-maven에서 npm도 함께 빌드 시키려면 pom.xml에 플러그인을 추가해줘야 한다.
-                   
-./mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행..? 찾아보기 -> maven의 명령어
+- UsernamePasswordAuthenticationToken : 로그아웃 하지 않는 한 사용자에 대한 세션을 계속 가지고 잇다
+- maven에서 npm도 함께 빌드 시키려면 pom.xml에 플러그인을 추가해줘야 한다.                 
+- mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행..? 찾아보기 -> maven의 명령어
+- spring web 와 spring web service 의 차이점!!
+- selectkey => mybatics에서 제공하는 태그
 
 
