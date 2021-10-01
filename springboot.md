@@ -187,3 +187,9 @@ PSA 잘 만든 인터페이스
 - font-awesome = 이미지가 아니라 폰트이기 때문에 가벼움
 - js는 태그 닫을때 </>로~
 - html head에 node모듈 불러올때 순서 유의하기
+
+## 10월 1일
+- localdatatime에서 이메일 발신 주기를 1시간 등 이런식으로 설정할 수 있다.
+- jsessionid로 spring security에서 사용자 정보를 가져와 맞춰본다.
+- @WithMockUser
+- jpa 영속성= db에 연결되어 있는 상태, 이 영속성을 끊고 객체에 불러와서 필요한 데이터만 객체로 불러와서 사용한다,
