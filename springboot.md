@@ -172,4 +172,22 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 - localdatatime에서 이메일 발신 주기를 1시간 등 이런식으로 설정할 수 있다.
 - jsessionid로 spring security에서 사용자 정보를 가져와 맞춰본다.
 - @WithMockUser
-- jpa 영속성= db에 연결되어 있는 상태, 이 영속성을 끊고 객체에 불러와서 필요한 데이터만 객체로 불러와서 사용한다,
+- jpa 영속성= db에 연결되어 있는 상태, 이 영속성을 끊고 객체에 불러와서 필요한 데이터만 객체로 불러와서 사용한다
+
+## 10월 6일
+영속된 상태이다=db가 연결된 상태이다
+destach = db와 연결이 끊긴 상태
+아무리 수정해도 변경이 되지 않기에
+repository에서 findby해서 다시 연결해줘야한다. 혹은 service 단에서 db랑 다시 연결해주어야 한다.
+-->4가지 상태-jpa life cycle 
+
+addFlashAttribute = 일회용 전송 모델 객체
+
+springboot modelmapper
+
+메소드쿼리
+
+@Entityaccount(table)->jpa(crud인터페이스)->service(구현부)->controller(사용자랑 서비스랑 소통)
+
+객체form은 사용자와 디비가 소통하는 객체
+
