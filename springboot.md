@@ -116,20 +116,17 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 ## 9월16일
 - 코드에서 객체를 만들고 그것을 서버에 올리는 것이 인스턴스화이다.
 - @Resource는 마이바티스에서 제공하는 어노테이션으로 name 속성 사용시 소문자로 시작해야 한다.
-- spring boot JMeter : Apache에서 java로 만든 웹 어플리케이션 성능 테스트 오픈 소스이다.
+- spring boot JMeter : Apache에서 java로 만든 웹 어플리케이션 성능 테스트 오픈 소스이다.  
 
-### ioc 제어권의 역전
+### ioc 제어권의 역전  
 - 주로 의존성에 대한 제어권이 역전 되었음을 의미한다. 원래는 의존성에 대한 제어권은 자기 자신이 가진다.
 - ioc 하지 않았다면 private OwnerRepository repository = new OwnerRepository(); -> 이렇게 작성함
 - ioc 하였다면 private OwnerRepository repo; -> new 하지 않음  
-
 - controller, repository 등 어노테이션이 붙은 클래스는 bean = ioc컨테이너에서 객체들을 만들고 의존성을 관리해준다.
 - bean = 스프링 ioc 컨테이너가 관리하는 객체
-- 어떻게 등록?
-- component scanning : @component 어노테이션(@repository,@service,@controller)이 붙어있는 클래스들을 찾아서 bean으로 등록해준다
+- 어떻게 등록할까 -> component scanning : @component 어노테이션(@repository,@service,@controller)이 붙어있는 클래스들을 찾아서 bean으로 등록해준다
 - 직접 xml이나 자바 설정 파일에 등록한다.
-- @bean 이라고 직접 작성해주면 된다.
-- @bean 어노테이션을 사용하려면 @configuration 어노테이션이 붙은 클래스에서만 사용 가능하다.
+- @bean 이라고 직접 작성해주면 된다. @bean 어노테이션을 사용하려면 @configuration 어노테이션이 붙은 클래스에서만 사용 가능하다.
 - @autowired를 사용해 bean을 꺼내서 사용할 수 있다. 
 
 ### DI 의존성 주입 
@@ -175,19 +172,11 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 - jpa 영속성= db에 연결되어 있는 상태, 이 영속성을 끊고 객체에 불러와서 필요한 데이터만 객체로 불러와서 사용한다
 
 ## 10월 6일
-영속된 상태이다=db가 연결된 상태이다
-destach = db와 연결이 끊긴 상태
-아무리 수정해도 변경이 되지 않기에
-repository에서 findby해서 다시 연결해줘야한다. 혹은 service 단에서 db랑 다시 연결해주어야 한다.
--->4가지 상태-jpa life cycle 
-
-addFlashAttribute = 일회용 전송 모델 객체
-
-springboot modelmapper
-
-메소드쿼리
-
-@Entityaccount(table)->jpa(crud인터페이스)->service(구현부)->controller(사용자랑 서비스랑 소통)
-
-객체form은 사용자와 디비가 소통하는 객체
+- 영속된 상태이다=db가 연결된 상태이다
+- destach = db와 연결이 끊긴 상태, 아무리 수정해도 변경이 되지 않기에 repository에서 findby해서 다시 연결해줘야한다. 혹은 service 단에서 db랑 다시 연결해주어야 한다.
+- jpa life cycle 
+- addFlashAttribute = 일회용 전송 모델 객체
+- springboot modelmapper
+- @Entity account(table)->jpa(crud인터페이스)->service(구현부)->controller(사용자랑 서비스랑 소통)
+- 객체form은 사용자와 디비가 소통하는 객체
 
