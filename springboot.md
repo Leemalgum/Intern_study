@@ -146,7 +146,6 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 - 생성자로 문자열을 생성한 경우 서로 다른 인스턴스를 가진다.
 
 ## 9월28일
-- extend jparepository
 - @RequiredArgsConstructor // bean으로 등록되어있다면 자동으로 생성자 만들어줌
 
 ## 9월29일
@@ -158,7 +157,7 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 ## 9월30일
 - UsernamePasswordAuthenticationToken : 로그아웃 하지 않는 한 사용자에 대한 세션을 계속 가지고 잇다
 - maven에서 npm도 함께 빌드 시키려면 pom.xml에 플러그인을 추가해줘야 한다.                 
-- mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행..? 찾아보기 -> maven의 명령어
+- mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행 -> maven의 명령어
 - spring web 와 spring web service 의 차이점!!
 - selectkey => mybatics에서 제공하는 태그
 - 타임리프 프레그먼트 사용  = 뷰에 대한 중복 코드 제거, th:if 로 if문을 사용할 수 있다.
