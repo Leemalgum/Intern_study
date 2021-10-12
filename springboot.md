@@ -146,36 +146,30 @@ Controller에게 데이터를 넘긴다. 실제 비지니스 로직은 여기서
 - 생성자로 문자열을 생성한 경우 서로 다른 인스턴스를 가진다.
 
 ## 9월28일
-- @RequiredArgsConstructor // bean으로 등록되어있다면 자동으로 생성자 만들어줌
+- @RequiredArgsConstructor : bean으로 등록되어있다면 자동으로 생성자 만들어줌
 
 ## 9월29일
 - jpa를 상속받으면 crud를 사용할 수 잇음
-- 암호화 솔트 찾아보기~
-- spring security가 기본 계정 user를 만들어준다+csrf 기능이 자동으로 켜져있다=csrf token = html에 hidden 태그에 설정되어 있다
+- 암호화 솔트 : 평문과 salt(랜덤 문자열)을 합친 후에 암호화하는 방식
+- spring security가 기본 계정 user를 만들어준다 + csrf 기능이 자동으로 켜져있다 = csrf token이 html에 hidden 태그에 설정되어 있다
 
 
 ## 9월30일
 - UsernamePasswordAuthenticationToken : 로그아웃 하지 않는 한 사용자에 대한 세션을 계속 가지고 잇다
 - maven에서 npm도 함께 빌드 시키려면 pom.xml에 플러그인을 추가해줘야 한다.                 
 - mvnw test 하면 프론트엔드 플러그인 설치도 완료되고 말그대로 test를 실행 -> maven의 명령어
-- spring web 와 spring web service 의 차이점!!
-- selectkey => mybatics에서 제공하는 태그
 - 타임리프 프레그먼트 사용  = 뷰에 대한 중복 코드 제거, th:if 로 if문을 사용할 수 있다.
-- package.json에 디펜던시에 패키지 추가하고 npm install하면 설치해줌~
+- package.json에 디펜던시에 패키지 추가하고 npm install 명령 사용하면 설치 완료
 - font-awesome = 이미지가 아니라 폰트이기 때문에 가벼움
-- js는 태그 닫을때 </>로~
+- js는 태그 닫을때 </>로
 - html head에 node모듈 불러올때 순서 유의하기
 
 ## 10월 1일
-- localdatatime에서 이메일 발신 주기를 1시간 등 이런식으로 설정할 수 있다.
 - jsessionid로 spring security에서 사용자 정보를 가져와 맞춰본다.
-- @WithMockUser
-- jpa 영속성= db에 연결되어 있는 상태, 이 영속성을 끊고 객체에 불러와서 필요한 데이터만 객체로 불러와서 사용한다
+- jpa 영속성= db에 연결되어 있는 상태
 
 ## 10월 6일
-- 영속된 상태이다=db가 연결된 상태이다
 - destach = db와 연결이 끊긴 상태, 아무리 수정해도 변경이 되지 않기에 repository에서 findby해서 다시 연결해줘야한다. 혹은 service 단에서 db랑 다시 연결해주어야 한다.
-- jpa life cycle 
 - addFlashAttribute = 일회용 전송 모델 객체
 - springboot modelmapper
 - @Entity account(table)->jpa(crud인터페이스)->service(구현부)->controller(사용자랑 서비스랑 소통)
